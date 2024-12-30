@@ -1,0 +1,68 @@
+$color-black-light2: #32313a54;
+$color-blue: #011b33;
+$color-white: #ffffff;
+
+.Footer {
+	display: flex;
+	justify-content: center;
+	padding-top: 10rem;
+	padding-bottom: 3rem;
+	border-top: 1px solid $color-black-light2;
+	background-color: $color-blue;
+	color: $color-white;
+
+	&Container {
+		display: flex;
+		flex-direction: column;
+		width: 80%;
+		align-items: center;
+		@media only screen and (max-width: 56.25rem) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&Logo {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 2rem;
+		justify-content: center;
+		font-size: 1.5rem;
+		align-items: center;
+		@media only screen and (max-width: 23.75rem) {
+			font-size: 1rem;
+		}
+	}
+
+	&Icons {
+		display: flex;
+		gap: 1.2rem;
+		margin-bottom: 1rem;
+
+		@media only screen and (max-width: 23.75rem) {
+			width: 60%;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	&Paragraph {
+		font-size: 1.5rem;
+		margin-bottom: 15rem;
+		width: 80%;
+
+		&Bold {
+			font-weight: bold;
+		}
+	}
+
+	&BottomComponent {
+		display: flex;
+		justify-content: space-between;
+		width: 50%;
+		font-size: 1.3rem;
+		@media only screen and (max-width: 56.25rem) {
+			width: 80%;
+		}
+	}
+}

@@ -1,0 +1,151 @@
+$color-primary: #00c853;
+$color-black-light: #32313aaf;
+$color-black-light2: #32313a54;
+$color-blue-light: #011b330e;
+$color-white: #ffffff;
+
+.Header {
+	padding-bottom: 3rem;
+	background-color: $color-blue-light;
+
+	@media only screen and (max-width: 23.75rem) {
+		padding-bottom: 1rem;
+	}
+
+	&Component {
+		max-width: 88%;
+		margin: 5rem auto 0;
+		display: flex;
+		align-items: center;
+		@media only screen and (max-width: 56.25rem) {
+			flex-direction: column;
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&TextBox {
+		width: 50%;
+		@media only screen and (max-width: 56.25rem) {
+			width: 100%;
+		}
+	}
+
+	&Heading {
+		font-size: 6rem;
+		margin-bottom: 1rem;
+		@media only screen and (max-width: 25rem) {
+			font-size: 4rem;
+		}
+		@media only screen and (max-width: 23.75rem) {
+			font-size: 3rem;
+		}
+	}
+
+	&Paragraph {
+		font-size: 2rem;
+		font-weight: 500;
+		color: $color-black-light;
+		width: 87%;
+		line-height: 3rem;
+		margin-bottom: 2rem;
+
+		@media only screen and (max-width: 56.25rem) {
+			width: 100%;
+		}
+
+		@media only screen and (max-width: 25rem) {
+			font-size: 2rem;
+			line-height: 2.5rem;
+		}
+
+		@media only screen and (max-width: 23.75rem) {
+			font-size: 1.7rem;
+			line-height: 2.2rem;
+		}
+
+		@media only screen and (max-width: 20rem) {
+			font-size: 1.5rem;
+			line-height: 2rem;
+		}
+	}
+
+	&EmailContainer {
+		display: flex;
+		border: 1px solid $color-black-light2;
+		width: 85%;
+		padding: 1rem 2rem;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: 0.3rem;
+		background-color: $color-blue-light;
+
+		@media only screen and (max-width: 56.25rem) {
+			width: 100%;
+			margin-bottom: 2rem;
+			flex-direction: column;
+		}
+	}
+	&Email {
+		font-size: 2rem;
+		color: $color-black-light;
+		background-color: transparent;
+		flex: 1;
+		height: 10vh;
+		border: none;
+
+		&:focus {
+			outline: none;
+		}
+		@media only screen and (max-width: 56.25rem) {
+			margin-bottom: 2rem;
+		}
+		@media only screen and (max-width: 23.75rem) {
+			font-size: 1.5rem;
+		}
+	}
+
+	&EmailButton {
+		color: $color-white;
+		border: none;
+		padding: 2rem 3rem;
+		background-color: $color-primary;
+		border-radius: 1rem;
+		font-size: 1.5rem;
+		font-weight: 600;
+		@media only screen and (max-width: 56.25rem) {
+			width: 100%;
+		}
+
+		@media only screen and (max-width: 26.875rem) {
+			font-size: 2rem;
+		}
+
+		@media only screen and (max-width: 25rem) {
+			font-size: 2rem;
+			padding: 1.3rem 1.8rem;
+		}
+
+		@media only screen and (max-width: 23.75rem) {
+			padding: 1rem 1.5rem;
+			font-size: 1.5rem;
+		}
+	}
+
+	&VideoContainer {
+		width: 50%;
+		height: 85vh;
+		border-radius: 1rem;
+		overflow: hidden;
+		@media only screen and (max-width: 56.25rem) {
+			width: 100%;
+			height: 50vh;
+		}
+
+		video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

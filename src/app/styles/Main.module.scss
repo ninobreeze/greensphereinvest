@@ -1,0 +1,302 @@
+$color-primary: #00c853;
+$color-black: #011b33;
+$color-black-light: #32313aaf;
+$color-black-light2: #32313a54;
+$color-white: #ffffff;
+
+
+.Main {
+	padding-top: 10rem;
+}
+
+.sectionInvest {
+	padding-bottom: 10rem;
+}
+
+.headingContainer {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 5rem;
+	margin-bottom: 10rem;
+
+	@media only screen and (max-width: 26.875rem) {
+		gap: 1rem;
+		margin-bottom: 4rem;
+	}
+
+	@media only screen and (max-width: 25rem) {
+		gap: 1rem;
+		margin-bottom: 4rem;
+	}
+}
+
+.heading {
+	font-size: 5rem;
+
+	@media only screen and (max-width: 26.875rem) {
+		font-size: 3rem;
+	}
+
+	@media only screen and (max-width: 25rem) {
+		font-size: 2.5rem;
+	}
+
+	@media only screen and (max-width: 23.75rem) {
+		font-size: 2.2rem;
+	}
+}
+
+.headingParagraph {
+	font-size: 2.5rem;
+	color: $color-black-light;
+
+	@media only screen and (max-width: 26.875rem) {
+		font-size: 1.8rem;
+	}
+
+	@media only screen and (max-width: 25rem) {
+		font-size: 1.5rem;
+	}
+	@media only screen and (max-width: 23.75rem) {
+		font-size: 1.2rem;
+	}
+}
+
+.boxContainer {
+	display: flex;
+	justify-content: center;
+	width: 80%;
+	margin: 0 auto;
+	gap: 2rem;
+	margin-bottom: 10rem;
+	@media only screen and (max-width: 56.25rem) {
+		flex-direction: column;
+		gap: 4rem;
+	}
+}
+.box {
+	padding: 3rem;
+	flex: 1;
+	border: 2px solid $color-black-light2;
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&Heading {
+		font-size: 3rem;
+		margin: 1rem 0;
+
+		@media only screen and (max-width: 26.875rem) {
+			font-size: 2.5rem;
+		}
+
+		@media only screen and (max-width: 25rem) {
+			font-size: 2.2rem;
+		}
+		@media only screen and (max-width: 23.75rem) {
+			font-size: 2rem;
+		}
+	}
+
+	&Paragraph {
+		text-align: center;
+		font-size: 2rem;
+		font-weight: 500;
+		color: $color-black-light;
+
+		@media only screen and (max-width: 26.875rem) {
+			font-size: 2rem;
+		}
+
+		@media only screen and (max-width: 25rem) {
+			font-size: 1.8rem;
+		}
+
+		@media only screen and (max-width: 23.75rem) {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+.buttonContainer {
+	display: flex;
+	justify-content: center;
+}
+
+.button {
+	padding: 2rem 4rem;
+	background-color: $color-primary;
+	border: none;
+	border-radius: 0.5rem;
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: $color-white;
+}
+
+.sectionControl {
+	background-color: $color-black;
+	display: flex;
+	justify-content: space-between;
+	padding: 4rem 13rem;
+	align-items: center;
+	margin-bottom: 10rem;
+	@media only screen and (max-width: 56.25rem) {
+		padding: 2rem 5rem;
+		flex-direction: column;
+	}
+
+	&TextBox {
+		color: $color-white;
+		@media only screen and (max-width: 56.25rem) {
+			text-align: center;
+		}
+	}
+
+	&Heading {
+		font-size: 3.5rem;
+		margin-bottom: 0.7rem;
+
+		@media only screen and (max-width: 26.875rem) {
+			font-size: 2.5rem;
+		}
+
+		@media only screen and (max-width: 23.75rem) {
+			font-size: 2.2rem;
+		}
+
+		@media only screen and (max-width: 20rem) {
+			font-size: 1.7rem;
+		}
+	}
+
+	&Paragraph {
+		font-size: 1.5rem;
+
+		@media only screen and (max-width: 56.25rem) {
+			margin-bottom: 3rem;
+		}
+
+		@media only screen and (max-width: 23.75rem) {
+			font-size: 1rem;
+			margin-bottom: 2rem;
+		}
+
+		@media only screen and (max-width: 20rem) {
+			font-size: 1rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	&Button {
+		background-color: $color-white;
+		padding: 1.5rem 2.5rem;
+		border: none;
+		font-size: 1.5rem;
+		font-weight: 500;
+		border-radius: 0.3rem;
+		color: $color-black;
+		@media only screen and (max-width: 56.25rem) {
+			width: 100%;
+		}
+
+		@media only screen and (max-width: 26.875rem) {
+			font-size: 1.8rem;
+		}
+
+		@media only screen and (max-width: 23.75rem) {
+			font-size: 1.3rem;
+			padding: 1rem 2rem;
+		}
+
+		@media only screen and (max-width: 20rem) {
+			font-size: 1.2rem;
+			padding: 1rem 2rem;
+		}
+	}
+}
+
+.boxList {
+	width: 100%;
+	margin-top: 2rem;
+
+	&Item {
+		display: flex;
+		flex: 1;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+
+		@media only screen and (max-width: 26.875rem) {
+			font-size: 1.4rem;
+		}
+
+		@media only screen and (max-width: 25rem) {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+.calculateContainer {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 3rem;
+}
+
+.calculate {
+	padding: 3rem;
+	border: 2px solid $color-black-light2;
+	border-radius: 1rem;
+
+	&Component1 {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+		@media only screen and (max-width: 56.25rem) {
+			flex-direction: column;
+			gap: 2rem;
+		}
+	}
+
+	&Component2 {
+		display: flex;
+		justify-content: space-between;
+
+		@media only screen and (max-width: 56.25rem) {
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		&Box {
+			padding: 1.5rem 4rem;
+			border: 1px solid $color-black-light2;
+			background-color: $color-primary;
+			font-size: 1.1rem;
+			color: $color-white;
+
+			@media only screen and (max-width: 56.25rem) {
+				text-align: center;
+			}
+		}
+	}
+
+	Select {
+		padding: 1rem 2rem;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	Input {
+		padding: 1rem 2rem;
+		width: 40%;
+		@media only screen and (max-width: 56.25rem) {
+			width: 100%;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}

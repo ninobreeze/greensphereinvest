@@ -1,0 +1,71 @@
+$color-primary: #00c853;
+$color-secondary: #0096c7;
+$color-white: #ffffff;
+$color-black: #222126;
+$color-black-light: #32313aaf;
+
+.NavBar {
+	width: 100%;
+	padding: 1.5rem 3rem;
+	display: flex;
+	gap: 2rem;
+	justify-content: space-between;
+	align-items: center;
+
+	&LogoContainer {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	&Logo {
+		// color: $color-primary;
+		font-size: 2rem;
+		@media only screen and (max-width: 56.25rem) {
+			font-size: 1.5rem;
+		}
+	}
+
+	&Links {
+		display: flex;
+		gap: 3rem;
+		color: $color-black-light;
+		@media only screen and (max-width: 56.25rem) {
+			display: none;
+		}
+
+		&Item {
+			font-size: 1.4rem;
+			font-weight: 500;
+		}
+	}
+
+	&ButtonContainer {
+		display: flex;
+		gap: 3rem;
+		align-items: center;
+		@media only screen and (max-width: 56.25rem) {
+			display: none;
+		}
+	}
+
+	&ButtonLogin {
+		font-size: 1.5rem;
+		font-weight: 400;
+		cursor: pointer;
+	}
+
+	&ButtonSignup {
+		font-size: 1.5rem;
+		background-color: $color-primary;
+		padding: 1rem 1.8rem;
+		color:$color-white;
+		border-radius: 1rem;
+		cursor: pointer;
+	}
+
+	&Menu {
+		@media only screen and (min-width: 56.25rem) {
+			display: none;
+		}
+	}
+}

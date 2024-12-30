@@ -1,0 +1,128 @@
+// $color-black: #222126;
+$color-black: #011b33;
+$color-black-light: #011b330e;
+
+/* Thin weight (100) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Thin.ttf") format("truetype");
+	font-weight: 100;
+	font-style: normal;
+}
+
+/* Light weight (300) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+/* Regular weight (400) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+/* Medium weight (500) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+
+/* Bold weight (700) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+
+/* Black weight (900) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-Black.ttf") format("truetype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+/* Thin Italic weight (100) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-ThinItalic.ttf") format("truetype");
+	font-weight: 100;
+	font-style: italic;
+}
+
+/* Light Italic weight (300) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-LightItalic.ttf") format("truetype");
+	font-weight: 300;
+	font-style: italic;
+}
+
+/* Regular Italic weight (400) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-RegularItalic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+}
+
+/* Medium Italic weight (500) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-MediumItalic.ttf") format("truetype");
+	font-weight: 500;
+	font-style: italic;
+}
+
+/* Bold Italic weight (700) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-BoldItalic.ttf") format("truetype");
+	font-weight: 700;
+	font-style: italic;
+}
+
+/* Black Italic weight (900) */
+@font-face {
+	font-family: "Roboto";
+	src: url("/fonts/Roboto-BlackItalic.ttf") format("truetype");
+	font-weight: 900;
+	font-style: italic;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	color: $color-black;
+	
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+ul {
+	list-style: none;
+}
+button {
+	&:hover {
+		cursor: pointer;
+	}
+}
