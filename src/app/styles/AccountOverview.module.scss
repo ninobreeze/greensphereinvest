@@ -6,104 +6,6 @@ $color-black-light: #32313aaf;
 $color-black-light2: #32313a54;
 $color-black-light3: #32313a11;
 
-.Dashboard {
-	background-color: $color-black-light3;
-}
-
-.NavBar {
-	width: 100%;
-	padding: 1.5rem 3rem;
-	display: flex;
-	gap: 2rem;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 1px solid $color-black-light2;
-
-	&LogoContainer {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-	}
-	&Logo {
-		cursor: pointer;
-		font-size: 2rem;
-		@media only screen and (max-width: 56.25rem) {
-			font-size: 1.5rem;
-		}
-	}
-
-	&Links {
-		display: flex;
-		gap: 3rem;
-		color: $color-black-light;
-		@media only screen and (max-width: 56.25rem) {
-			display: none;
-		}
-
-		&Item {
-			font-size: 1.4rem;
-			font-weight: 500;
-		}
-	}
-
-	&ButtonContainer {
-		display: flex;
-		gap: 3rem;
-		align-items: center;
-		// @media only screen and (max-width: 56.25rem) {
-		// 	display: none;
-		// }
-	}
-
-	&ButtonLogin {
-		font-size: 1.5rem;
-		font-weight: 400;
-		cursor: pointer;
-	}
-
-	&ButtonSignup {
-		font-size: 1.5rem;
-		background-color: $color-primary;
-		padding: 1rem 1.8rem;
-		color: $color-white;
-		border-radius: 1rem;
-		cursor: pointer;
-		@media only screen and (max-width: 20rem) {
-			padding: 1rem ;
-
-		}
-	}
-
-	&Menu {
-		@media only screen and (min-width: 56.25rem) {
-			display: none;
-		}
-	}
-}
-
-.Container {
-	max-width: 80%;
-	margin: 0 auto;
-	padding: 3rem 0;
-	border-bottom: 1px solid $color-black-light2;
-	@media only screen and (max-width: 56.25rem) {
-		max-width: 90%;
-	}
-}
-
-.Group1 {
-	display: flex;
-	justify-content: space-between;
-	gap: 1rem;
-	margin-bottom: 2rem;
-}
-
-.Group2 {
-	display: flex;
-	justify-content: space-between;
-	gap: 1rem;
-}
-
 .Box {
 	width: 25%;
 	height: 12vh;
@@ -114,7 +16,6 @@ $color-black-light3: #32313a11;
 	align-items: center;
 	justify-content: center;
 	gap: 1rem;
-	cursor: pointer;
 }
 
 .Container2 {

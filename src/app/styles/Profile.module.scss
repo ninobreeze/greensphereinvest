@@ -1,0 +1,71 @@
+$color-black-light: #32313aaf;
+$color-black-light2: #32313a54;
+$color-primary: #00c853;
+
+.Container2 {
+	max-width: 80%;
+	margin: 0 auto;
+	padding: 3rem 0;
+
+	&HeadingContainer {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	&Heading {
+		font-size: 2.5rem;
+	}
+
+	@media only screen and (max-width: 56.25rem) {
+		max-width: 90%;
+	}
+}
+
+.ContainerBox {
+	border: 1px solid $color-black-light;
+	border-radius: 0.5rem;
+	padding: 2rem;
+
+	li {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid $color-black-light2;
+	}
+
+	p {
+		@media only screen and (max-width: 26.875rem) {
+			width: 50%;
+		}
+	}
+
+	input {
+		background-color: transparent;
+		border: 1px solid $color-black-light2;
+		padding: 0.5rem;
+		width: 30%;
+		@media only screen and (max-width:26.875rem) {
+			width: 50%;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.ButtonContainer {
+	text-align: center;
+	padding-top: 1rem;
+
+	button {
+		background-color: $color-primary;
+		border: none;
+		padding: 1rem 2rem;
+		border-radius: 0.5rem;
+		color: #ffffff;
+	}
+}
