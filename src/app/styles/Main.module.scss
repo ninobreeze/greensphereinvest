@@ -4,9 +4,47 @@ $color-black-light: #32313aaf;
 $color-black-light2: #32313a54;
 $color-white: #ffffff;
 
-
 .Main {
 	padding-top: 10rem;
+}
+
+.marqueeContainer {
+	overflow: hidden;
+	width: 100%;
+	background-color: $color-black;
+	padding: 6rem 1rem;
+	white-space: nowrap;
+	position: relative;
+	margin-bottom: 10rem;
+
+	@media only screen and (max-width: 56.25rem) {
+		padding: 4rem 1rem;
+	}
+
+	@media only screen and (max-width: 26.875rem) {
+		padding: 2.5rem 1rem;
+	}
+}
+
+.marquee {
+	position: absolute;
+	top: 50;
+	left: 0;
+	display: flex;
+	gap: 4rem;
+	align-items: center;
+	p {
+		color: $color-white;
+		font-size: 2.8rem;
+
+		@media only screen and (max-width: 56.25rem) {
+			font-size: 1.8rem;
+		}
+
+		@media only screen and (max-width: 26.875rem) {
+			font-size: 1.2rem;
+		}
+	}
 }
 
 .sectionInvest {

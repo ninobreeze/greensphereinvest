@@ -4,7 +4,8 @@ import NavBar from "./NavBar";
 import Menu from "./Menu";
 import styles from "@/app/styles/Header.module.scss";
 import { motion } from "framer-motion";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export const myContext = createContext();
 
@@ -27,7 +28,20 @@ const HeaderComponentVariant = {
 
 function Header() {
 	const [isOpen, setIsOpen] = useState(false);
-	
+	const [userEmail, setUserEmail] = useState("");
+	const router = useRouter();
+
+	function handleChange(e) {
+		setUserEmail(e.target.value);
+	}
+	function handleSubmit() {
+		localStorage.setItem("email", userEmail);
+		router.push("/signup");
+	}
+
+	useEffect(function () {
+		localStorage.clear();
+	}, []);
 
 	return (
 		<div className={styles.Header}>
@@ -51,12 +65,19 @@ function Header() {
 						</p>
 						<div className={styles.HeaderEmailContainer}>
 							<input
+								type="email"
+								onChange={handleChange}
+								// onChange={(e) => setUserEmail(e.target.value)}
 								className={styles.HeaderEmail}
-								type="text"
 								placeholder="Enter your email address"
 							/>
-							
-							<button className={styles.HeaderEmailButton}>Sign Up</button>
+
+							<button
+								onClick={handleSubmit}
+								className={styles.HeaderEmailButton}
+							>
+								Sign Up
+							</button>
 						</div>
 					</div>
 					<div className={styles.HeaderVideoContainer}>

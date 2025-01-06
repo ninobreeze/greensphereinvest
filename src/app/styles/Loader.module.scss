@@ -1,0 +1,28 @@
+$color-primary: #011b33;
+$color-primary-light: #011b337c;
+
+.SpinnerContainer {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.spinner {
+	width: 5rem;
+	height: 5rem;
+	border: 0.5rem solid $color-primary-light;
+	border-radius: 50%;
+	border-top: 0.5rem solid $color-primary;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

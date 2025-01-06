@@ -1,4 +1,6 @@
 import "./globals.scss";
+import { LoadingProvider } from "@/contexts/loading";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
 	title: "Create Next App",
@@ -8,7 +10,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<LoadingProvider>
+				<body>
+					{children}
+					<ToastContainer
+						position="top-center"
+						autoClose={3000}
+						hideProgressBar={true}
+						newestOnTop={false}
+						closeOnClick
+						rtl={false}
+						pauseOnFocusLoss
+						theme="light"
+					/>
+				</body>
+			</LoadingProvider>
 		</html>
 	);
 }

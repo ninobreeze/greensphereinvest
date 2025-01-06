@@ -2,9 +2,10 @@
 
 import styles from "@/app/styles/Main.module.scss";
 import Image from "next/image";
-import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, useInView, useMotionValue, animate } from "framer-motion";
 import { useRouter } from "next/navigation";
+import useMeasure from "react-use-measure";
 const Enter = {
 	hidden: {
 		opacity: 0,
@@ -22,6 +23,57 @@ const Enter = {
 };
 
 function Main() {
+	const [coinsData, setCoins] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	const coins = [
+		{ coinName: coinsData[0]?.id, coinPrice: coinsData[0]?.current_price },
+		{ coinName: coinsData[1]?.id, coinPrice: coinsData[1]?.current_price },
+		{ coinName: coinsData[3]?.id, coinPrice: coinsData[3]?.current_price },
+		{ coinName: coinsData[4]?.id, coinPrice: coinsData[4]?.current_price },
+		{ coinName: coinsData[5]?.id, coinPrice: coinsData[5]?.current_price },
+		{ coinName: coinsData[6]?.id, coinPrice: coinsData[6]?.current_price },
+	];
+	let [ref, { width }] = useMeasure();
+	const xTranslation = useMotionValue(0);
+
+	useEffect(
+		function () {
+			let controls;
+			let finalPosition = -width / 2 - 20;
+
+			controls = animate(xTranslation, [0, finalPosition], {
+				ease: "linear",
+				duration: 25,
+				repeat: Infinity,
+				repeatType: "loop",
+				repeatDelay: 0,
+			});
+			return controls.stop;
+		},
+		[xTranslation, width]
+	);
+
+	useEffect(() => {
+		async function fetchData() {
+			try {
+				const response = await fetch(
+					"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd"
+				);
+				if (!response.ok) {
+					throw new Error("Failed to fetch data");
+				}
+				const data = await response.json();
+				setCoins(data);
+			} catch (error) {
+				console.error("Error fetching coin data:", error);
+			} finally {
+				setLoading(false);
+			}
+		}
+
+		fetchData();
+	}, []);
 	const [selection, setSelection] = useState(7.5);
 	const [amount, setAmount] = useState(null);
 	const result =
@@ -49,6 +101,19 @@ function Main() {
 	return (
 		<div className={styles.Main}>
 			<section className={styles.sectionInvest}>
+				<div className={styles.marqueeContainer}>
+					<motion.div
+						className={styles.marquee}
+						ref={ref}
+						style={{ x: xTranslation, y: "-50%" }}
+					>
+						{[...coins, ...coins].map((coin, i) => (
+							<p key={i}>{`${coin.coinName?.toUpperCase()} $${
+								coin.coinPrice
+							}`}</p>
+						))}
+					</motion.div>
+				</div>
 				<motion.div
 					ref={ref1}
 					variants={Enter}
