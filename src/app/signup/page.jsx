@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import styles from "@/app/styles/signup.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import supabase from "@/services/supabase";
 import Loader from "../components/Loader";
 
@@ -42,14 +42,20 @@ const MoveUp = {
 
 function page() {
 	const router = useRouter();
-	const email = localStorage.getItem("email");
 	const [isLoading, setIsLoading] = useState(false);
 	const [formData, setFormData] = useState({
 		fullname: "",
 		username: "",
-		email: email || "",
+		email: "",
 		password: "",
 	});
+
+	useEffect(function () {
+		const email = localStorage.getItem("email");
+		if (email) {
+			setFormData({ ...formData, email: email });
+		}
+	}, []);
 
 	async function checkUser(email) {
 		const { data, error } = await supabase

@@ -29,6 +29,7 @@ const HeaderComponentVariant = {
 function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [userEmail, setUserEmail] = useState("");
+
 	const router = useRouter();
 
 	function handleChange(e) {
