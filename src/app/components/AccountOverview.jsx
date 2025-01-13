@@ -3,6 +3,8 @@
 import styles from "@/app/styles/AccountOverview.module.scss";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { UserContext } from "../dashboard/page";
 
 const MoveUp = {
 	hidden: {
@@ -21,6 +23,7 @@ const MoveUp = {
 };
 
 function AccountOverview() {
+	const { userDetails } = useContext(UserContext);
 	return (
 		<motion.div
 			variants={MoveUp}
@@ -36,7 +39,9 @@ function AccountOverview() {
 					<Image alt="welcome" src={"/welcome.png"} width={20} height={20} />
 					<div>
 						<h4 className={styles.OverviewBox1PrimaryText}>Welcome</h4>
-						<h3 className={styles.OverviewBox1SecondaryText}>Mattjeeter3324</h3>
+						<h3 className={styles.OverviewBox1SecondaryText}>
+							{userDetails[0].username}
+						</h3>
 					</div>
 				</div>
 				<div className={styles.OverviewBox1Item}>
@@ -44,7 +49,7 @@ function AccountOverview() {
 					<div>
 						<h4 className={styles.OverviewBox1PrimaryText}>Email</h4>
 						<h3 className={styles.OverviewBox1SecondaryText}>
-							jeetermatthew@yahoo.com
+							{userDetails[0].email}
 						</h3>
 					</div>
 				</div>
@@ -52,7 +57,9 @@ function AccountOverview() {
 					<Image alt="balance" src={"/balance.png"} width={20} height={20} />
 					<div>
 						<h4 className={styles.OverviewBox1PrimaryText}>Balance</h4>
-						<h3 className={styles.OverviewBox1SecondaryText}>$39877.25</h3>
+						<h3
+							className={styles.OverviewBox1SecondaryText}
+						>{`$${userDetails[0].balance}`}</h3>
 					</div>
 				</div>
 			</div>
@@ -62,19 +69,21 @@ function AccountOverview() {
 						<h3 className={styles.OverviewBox2Group1ItemPrimary}>
 							Total Earned
 						</h3>
-						<h3 className={styles.OverviewBox2Group1ItemSecondary}>$3247.25</h3>
+						<h3
+							className={styles.OverviewBox2Group1ItemSecondary}
+						>{`$${userDetails[0].TotalEarned}`}</h3>
 					</div>
 					<div className={styles.OverviewBox2Group1Item}>
 						<h3 className={styles.OverviewBox2Group1ItemPrimary}>
 							Total Deposit
 						</h3>
-						<h3 className={styles.OverviewBox2Group1ItemSecondary}>$3247.25</h3>
+						<h3 className={styles.OverviewBox2Group1ItemSecondary}>{`$${userDetails[0].TotalDeposit}`}</h3>
 					</div>
 					<div className={styles.OverviewBox2Group1Item}>
 						<h3 className={styles.OverviewBox2Group1ItemPrimary}>
 							Last Deposit
 						</h3>
-						<h3 className={styles.OverviewBox2Group1ItemSecondary}>$3247.25</h3>
+						<h3 className={styles.OverviewBox2Group1ItemSecondary}>{`$${userDetails[0].LastDeposit}`}</h3>
 					</div>
 				</div>
 
@@ -83,19 +92,19 @@ function AccountOverview() {
 						<h3 className={styles.OverviewBox2Group2ItemPrimary}>
 							Total Withdrawal
 						</h3>
-						<h3 className={styles.OverviewBox2Group2ItemSecondary}>$3247.25</h3>
+						<h3 className={styles.OverviewBox2Group2ItemSecondary}>{`$${userDetails[0].TotalWithdrawal}`}</h3>
 					</div>
 					<div className={styles.OverviewBox2Group2Item}>
 						<h3 className={styles.OverviewBox2Group2ItemPrimary}>
-							Total Withdrawal
+							Pending Withdrawal
 						</h3>
-						<h3 className={styles.OverviewBox2Group2ItemSecondary}>$3247.25</h3>
+						<h3 className={styles.OverviewBox2Group2ItemSecondary}>{`$${userDetails[0].PendingWithdrawal}`}</h3>
 					</div>
 					<div className={styles.OverviewBox2Group2Item}>
 						<h3 className={styles.OverviewBox2Group2ItemPrimary}>
 							Last Withdrawal
 						</h3>
-						<h3 className={styles.OverviewBox2Group2ItemSecondary}>$3247.25</h3>
+						<h3 className={styles.OverviewBox2Group2ItemSecondary}>{`$${userDetails[0].LastWithdrawal}`}</h3>
 					</div>
 				</div>
 			</div>
@@ -106,12 +115,12 @@ function AccountOverview() {
 				<div className={styles.OverviewBox3BoxContainer}>
 					<div className={styles.OverviewBox3Box}>
 						<Image alt="bitcoin" src={"/bitcoin.svg"} width={20} height={20} />
-						<h3>$33249.75</h3>
+						<h3>{`$${userDetails[0].BitcoinBalance}`}</h3>
 						<h4>Bitcoin</h4>
 					</div>
 					<div className={styles.OverviewBox3Box}>
 						<Image alt="bitcoin" src={"/tether.svg"} width={20} height={20} />
-						<h3>$33249.75</h3>
+						<h3>{`$${userDetails[0].TetherBalance}`}</h3>
 						<h4>Usdt TRC20</h4>
 					</div>
 				</div>

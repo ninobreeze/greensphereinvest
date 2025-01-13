@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import styles from "@/app/styles/signup.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import supabase from "@/services/supabase";
 import Loader from "../components/Loader";
+import { LoadingContext } from "@/contexts/loading";
 
 const MoveDown = {
 	hidden: {
@@ -42,7 +43,7 @@ const MoveUp = {
 
 function page() {
 	const router = useRouter();
-	const [isLoading, setIsLoading] = useState(false);
+	const { isLoading, setIsLoading } = useContext(LoadingContext);
 	const [formData, setFormData] = useState({
 		fullname: "",
 		username: "",

@@ -3,6 +3,9 @@
 import styles from "@/app/styles/Withdraw.module.scss";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useContext, useState } from "react";
+import supabase from "@/services/supabase";
+import { UserContext } from "../dashboard/page";
 
 const MoveUp = {
 	hidden: {
@@ -21,6 +24,26 @@ const MoveUp = {
 };
 
 function Withdraw() {
+	const { userDetails, setIsOpen } = useContext(UserContext);
+	const [amount, setAmount] = useState(null);
+	const [wallet, setWallet] = useState(null);
+	async function changeWithdrawalValue() {
+		try {
+			const { data, error } = await supabase
+				.from("users")
+				.update({ PendingWithdrawal: amount })
+				.eq("email", userDetails[0].email);
+		} catch (error) {
+			alert(error);
+		}
+	}
+
+	function withdrawalCompleted() {
+		if (Number(amount) > 1 && wallet !== null) {
+			changeWithdrawalValue();
+			setIsOpen("overview");
+		}
+	}
 	return (
 		<motion.div
 			variants={MoveUp}
@@ -118,8 +141,17 @@ function Withdraw() {
 
 				<div className={styles.deposit}>
 					<h3>Amount</h3>
-					<input type="text" placeholder="50.00" />
-					<button>Withdraw</button>
+					<input
+						onChange={(e) => setWallet(e.target.value)}
+						type="text"
+						placeholder="wallet address"
+					/>
+					<input
+						onChange={(e) => setAmount(e.target.value)}
+						type="number"
+						placeholder="50.00"
+					/>
+					<button onClick={withdrawalCompleted}>Withdraw</button>
 				</div>
 			</div>
 		</motion.div>

@@ -10,11 +10,12 @@ import Profile from "../components/Profile";
 import Deposit from "../components/Deposit";
 import Withdraw from "../components/Withdraw";
 import Referrals from "../components/Referrals";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, createContext } from "react";
 import supabase from "@/services/supabase";
 import Unauthorized from "../components/Unauthorized";
 import Loader from "../components/Loader";
 import { LoadingContext } from "@/contexts/loading";
+import Popup from "../components/Popup";
 
 const MoveUp = {
 	hidden: {
@@ -48,18 +49,26 @@ const MoveDown = {
 	},
 };
 
+export const UserContext = createContext();
+
 function page() {
 	const router = useRouter();
 	const [isOpen, setIsOpen] = useState("overview");
 	const [userEmail, setUserEmail] = useState(null);
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
 	const { isLoading, setIsLoading } = useContext(LoadingContext);
+	const [userDetails, setUserDetails] = useState(null);
+	const [plan, setPlan] = useState(null);
+	const [wallet, setWallet] = useState(null);
+	const [depositAmount, setDepositAmount] = useState("50");
 
-	async function getUserData() {
+	
+	async function getUserData(userEmail) {
 		const { data, error } = await supabase
 			.from("users")
 			.select("*")
 			.eq("email", userEmail);
+		return { data, error };
 	}
 
 	useEffect(
@@ -75,10 +84,11 @@ function page() {
 						router.push("/login");
 					}, 2000);
 				} else {
-					console.log(getUserData());
+					const { id, email } = user;
+					const userData = await getUserData(email);
+					setUserDetails(userData?.data);
 					setIsAuthenticated(true);
 					setIsLoading(false);
-					const { id, email } = user;
 					setUserEmail(`${email}`);
 				}
 			}
@@ -98,7 +108,19 @@ function page() {
 	}
 
 	return (
-		<>
+		<UserContext.Provider
+			value={{
+				userDetails,
+				isOpen,
+				setIsOpen,
+				plan,
+				setPlan,
+				wallet,
+				setWallet,
+				depositAmount,
+				setDepositAmount,
+			}}
+		>
 			{isLoading && <Loader />}
 
 			{isAuthenticated && (
@@ -265,12 +287,13 @@ function page() {
 					{isOpen === "referral" && <Referrals />}
 					{isOpen === "deposit" && <Deposit />}
 					{isOpen === "withdraw" && <Withdraw />}
+					{isOpen === "popup" && <Popup />}
 					<Footer />
 				</div>
 			)}
 
 			{!isAuthenticated && <Unauthorized />}
-		</>
+		</UserContext.Provider>
 	);
 }
 

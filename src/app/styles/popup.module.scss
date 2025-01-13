@@ -1,0 +1,68 @@
+$color-black: #011b33;
+$color-black-light: #32313aaf;
+$color-black-light2: #32313a54;
+$color-primary: #00c853;
+
+.Container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3rem 0;
+}
+
+.Popup {
+	padding: 4rem;
+	background-color: #ffffff;
+	border-radius: 1rem;
+	width: 50%;
+	text-align: center;
+
+	@media only screen and (max-width: 56.25rem) {
+		width: 90%;
+	}
+
+	&Heading {
+		font-size: 2rem;
+		margin-top: 2rem;
+		@media only screen and (max-width: 56.25rem) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&WalletAddress {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		@media only screen and (max-width: 56.25rem) {
+			width: 100%;
+			word-wrap: break-word;
+		}
+		@media only screen and (max-width: 26.875rem) {
+			font-size: 2rem;
+		}
+	}
+
+	ul {
+		border: 1px solid $color-black-light;
+		padding: 2rem;
+		border-radius: 0.5rem;
+		margin-bottom: 3rem;
+	}
+
+	li {
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		font-weight: bold;
+		border-bottom: 1px solid $color-black-light2;
+		padding-bottom: 0.5rem;
+	}
+
+	button {
+		padding: 1.5rem 2rem;
+		background-color: $color-primary;
+		border: none;
+		color: #ffffff;
+		border-radius: 0.5rem;
+	}
+}
