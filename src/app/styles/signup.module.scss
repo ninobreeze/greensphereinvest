@@ -100,3 +100,37 @@ $color-black-light3: #32313a11;
 		}
 	}
 }
+
+.VerifyEmail {
+	margin: 0 auto;
+	width: 70%;
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 5rem;
+
+	h2{
+		font-size: 2rem;
+		margin-bottom: 2rem;
+	}
+	input{
+		border: none;
+		border-bottom: 1px solid $color-black;
+		margin-bottom: 1.5rem;
+		&:focus {
+			outline: none;
+		}
+	}
+
+	button{
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: 0.5rem;
+		color: $color-black;
+		background-color: $color-primary;
+		color: #ffffff;
+	}
+
+}

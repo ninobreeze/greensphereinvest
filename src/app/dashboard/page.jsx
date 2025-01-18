@@ -142,10 +142,10 @@ function page() {
 								onClick={(e) => router.push("/")}
 								className={styles.NavBarLogo}
 							>
-								CRYPTOSPHERE
+								Greensphereinvest
 							</h1>
 						</motion.div>
-						<div className={styles.NavBarNavigation}>
+						{/* <div className={styles.NavBarNavigation}>
 							<motion.ul
 								variants={MoveUp}
 								initial="hidden"
@@ -158,7 +158,7 @@ function page() {
 								<li className={styles.NavBarLinksItem}>FAQ</li>
 								<li className={styles.NavBarLinksItem}>Support</li>
 							</motion.ul>
-						</div>
+						</div> */}
 						<motion.div
 							variants={MoveUp}
 							initial="hidden"
@@ -249,14 +249,14 @@ function page() {
 								/>
 								<h3>Referral</h3>
 							</motion.div>
-							<div onClick={(e) => setIsOpen("banner")} className={styles.Box}>
+							<div onClick={(e) => setIsOpen("loan")} className={styles.Box}>
 								<Image
-									alt="banner"
+									alt="loan"
 									src={"/banner.png"}
 									width={20}
 									height={20}
 								/>
-								<h3>Banners</h3>
+								<h3>Loan</h3>
 							</div>
 							<div onClick={(e) => setIsOpen("profile")} className={styles.Box}>
 								<Image

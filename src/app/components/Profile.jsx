@@ -2,6 +2,9 @@
 
 import styles from "@/app/styles/Profile.module.scss";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { UserContext } from "@/app/dashboard/page";
+import { useRouter } from "next/navigation";
 
 const MoveUp = {
 	hidden: {
@@ -20,6 +23,8 @@ const MoveUp = {
 };
 
 function Profile() {
+	const { userDetails, setIsOpen } = useContext(UserContext);
+	const router = useRouter();
 	return (
 		<motion.div
 			variants={MoveUp}
@@ -35,23 +40,23 @@ function Profile() {
 				<ul>
 					<li>
 						<p>Account Name</p>
-						<input type="text" />
+						<input value={userDetails[0].username} type="text" />
 					</li>
 					<li>
 						<p>Registration Date</p>
-						<p>Jan-11-2025 06:05:50 AM</p>
+						<p>---</p>
 					</li>
 					<li>
 						<p>Your Full Name</p>
-						<input type="text" />
+						<input value={userDetails[0].fullname} type="text" />
 					</li>
 					<li>
 						<p> New Password</p>
-						<input type="text" />
+						<input type="password" />
 					</li>
 					<li>
 						<p>Retype Password</p>
-						<input type="text" />
+						<input type="password" />
 					</li>
 					<li>
 						<p>Your Bank Wire Account Details</p>
@@ -71,11 +76,11 @@ function Profile() {
 					</li>
 					<li>
 						<p> Your Email Address</p>
-						<input type="text" />
+						<input value={userDetails[0].email} type="text" />
 					</li>
 				</ul>
 				<div className={styles.ButtonContainer}>
-					<button>Update</button>
+					<button onClick={() => setIsOpen("overview")}>Update</button>
 				</div>
 			</div>
 		</motion.div>

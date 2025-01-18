@@ -40,9 +40,9 @@ function NavBar() {
 					height={25}
 					alt="coins-logo"
 				/>
-				<h1 className={styles.NavBarLogo}>CRYPTOSPHERE</h1>
+				<h1 className={styles.NavBarLogo}>Greensphereinvest</h1>
 			</motion.div>
-			<div className={styles.NavBarNavigation}>
+			{/* <div className={styles.NavBarNavigation}>
 				<motion.ul
 					variants={MoveUp}
 					initial="hidden"
@@ -55,7 +55,7 @@ function NavBar() {
 					<li className={styles.NavBarLinksItem}>FAQ</li>
 					<li className={styles.NavBarLinksItem}>Support</li>
 				</motion.ul>
-			</div>
+			</div> */}
 			<motion.div
 				variants={MoveUp}
 				initial="hidden"

@@ -2,7 +2,7 @@
 
 import styles from "@/app/styles/Footer.module.scss";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 const Enter = {
 	hidden: {
@@ -39,7 +39,7 @@ function Footer() {
 						height={35}
 						alt="coins-logo"
 					/>
-					<h1>CRYPTOSPHERE</h1>
+					<h1>Greensphereinvest</h1>
 				</div>
 
 				<ul className={styles.FooterIcons}>
@@ -90,7 +90,7 @@ function Footer() {
 					opportunities.
 				</p>
 				<div className={styles.FooterBottomComponent}>
-					<p>&copy; 2024 cryptosphere.com. All Right Reserved.</p>
+					<p>&copy; 2024 Greensphereinvest.com. All Right Reserved.</p>
 					<p>57 Caerfai Bay Road, United kingdom</p>
 				</div>
 			</motion.div>

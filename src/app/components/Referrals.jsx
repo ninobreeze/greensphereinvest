@@ -2,6 +2,8 @@
 
 import styles from "@/app/styles/Referrals.module.scss";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { UserContext } from "../dashboard/page";
 
 const MoveUp = {
 	hidden: {
@@ -20,6 +22,7 @@ const MoveUp = {
 };
 
 function Referrals() {
+	const { userDetails } = useContext(UserContext);
 	return (
 		<motion.div
 			variants={MoveUp}
@@ -50,7 +53,7 @@ function Referrals() {
 					</li>
 					<li>
 						<p>Referal Link</p>
-						<p>https://zengoinvest.com/?ref=Mattjeeter3324</p>
+						<p>{`https://greensphereinvest.com/?ref=${userDetails[0].username}`}</p>
 					</li>
 				</ul>
 			</div>
