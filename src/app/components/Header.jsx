@@ -61,7 +61,7 @@ function Header() {
 						</h1>
 						<p className={styles.HeaderParagraph}>
 							Invest in crypto securely and maximize your potential with
-							CryptoSphere.com. Sign up today for AI-powered trading and smart
+							greensphereinvest.com. Sign up today for AI-powered trading and smart
 							solutions.
 						</p>
 						<div className={styles.HeaderEmailContainer}>
