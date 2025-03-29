@@ -102,7 +102,7 @@ function page() {
 								height={25}
 								alt="coins-logo"
 							/>
-							<h1 className={styles.NavBarLogo}>CRYPTOSPHERE</h1>
+							<h1 className={styles.NavBarLogo}>GREENSPHEREINVEST</h1>
 						</motion.div>
 					</nav>
 					<motion.div
