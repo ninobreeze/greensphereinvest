@@ -83,7 +83,7 @@ function Popup() {
 				</div>
 				<h2 className={styles.PopupHeading}>Wallet Address:</h2>
 				<p className={styles.PopupWalletAddress}>
-					bc1q9vl8r7ucn576hfvclfmvpwcr6sf2gxnqdgkpfu
+					bc1qrhzzx7506h60pw30jrymgd3kv7p8ys892wz0zx
 				</p>
 				<ul>
 					<li>
